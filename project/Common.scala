@@ -4,7 +4,7 @@ import sbt._
 
 object  Common {
   val Settings: Seq[Def.Setting[_]] = Seq(
-    organization := "net.dericbourg.gtfs-parser",
+    organization := "net.dericbourg.gtfs",
     version := "0.0.1-SNAPSHOT",
     scalaVersion := "2.12.2",
     crossScalaVersions := Seq("2.10.6", "2.11.8", scalaVersion.value),
