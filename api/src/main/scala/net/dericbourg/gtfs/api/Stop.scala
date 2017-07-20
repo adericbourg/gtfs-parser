@@ -4,7 +4,7 @@ import java.net.URI
 import java.util.TimeZone
 
 import net.dericbourg.gtfs.api.Location.LocationType
-import net.dericbourg.gtfs.api.Wheelchair.WheelchairBoardingType
+import net.dericbourg.gtfs.api.Wheelchair.WheelchairAccessibility
 
 /**
   * A stop is a location where vehicles stop to pick up or drop off passengers.
@@ -50,7 +50,7 @@ case class Stop(id: StopId,
                 locationType: Option[LocationType] = None,
                 parentStation: Option[StopId],
                 timezone: Option[TimeZone],
-                wheelchairBoarding: Option[WheelchairBoardingType])
+                wheelchairBoarding: Option[WheelchairAccessibility])
 
 /**
   * Stop identifier.
@@ -76,21 +76,5 @@ object Location {
 
   /** A physical structure or area that contains one or more stop. */
   case object Station extends LocationType
-
-}
-
-object Wheelchair {
-
-  /** Identifies whether wheelchair boardings are possible. */
-  sealed trait WheelchairBoardingType
-
-  /** Indicates that there is no accessibility information for the stop. */
-  case object NoInformation extends WheelchairBoardingType
-
-  /** Indicates that at least some vehicles at this stop can be boarded by a rider in a wheelchair. */
-  case object Possible extends WheelchairBoardingType
-
-  /** Wheelchair boarding is not possible at this stop. */
-  case object NotPossible extends WheelchairBoardingType
 
 }
