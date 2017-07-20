@@ -7,6 +7,6 @@ lazy val root = project.in(file("."))
   .aggregate(api)
 
 lazy val api = (project in file("api"))
-  .settings(name := "gtfs-parser-api")
+  .settings(name := "gtfs-api")
   .settings(Common.Settings)
   .settings(Common.PublishMaven)
