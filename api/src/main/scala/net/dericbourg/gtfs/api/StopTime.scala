@@ -45,7 +45,7 @@ import net.dericbourg.gtfs.core.NonNegInt
   *                          <table>
   *                          <tr>
   *                          <th>Time</th>
-  *                          <th>[[arrivalTime]] value</th>
+  *                          <th>[[departureTime]] value</th>
   *                          </tr>
   *                          <tr>
   *                          <td>08:10:00 A.M.</td>
