@@ -88,22 +88,3 @@ case class StopTime(stopId: StopId,
                     dropOffType: Option[DropOffType],
                     shapeDistTraveled: Option[String],
                     timepoint: Option[TimepointPrecision])
-
-object Timepoint {
-
-  /**
-    * Precision of timepoints.
-    */
-  sealed trait TimepointPrecision
-
-  /**
-    * Times are considered exact.
-    */
-  case object Exact extends TimepointPrecision
-
-  /**
-    * Times are considered approximate.
-    */
-  case object Approximate extends TimepointPrecision
-
-}
