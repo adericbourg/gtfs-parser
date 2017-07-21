@@ -25,7 +25,7 @@ case class FareAttribute(fareId: FareId,
                          transfers: Transfer,
                          transferDuration: Option[Duration])
 
-sealed case class FareId(value: String) extends AnyVal
+case class FareId(value: String) extends AnyVal
 
 object FareAttribute {
 
@@ -37,12 +37,12 @@ object FareAttribute {
   /**
     * Fare is paid on board.
     */
-  sealed case object OnBoard extends PaymentMethod
+  case object OnBoard extends PaymentMethod
 
   /**
     * Fare must be paid before boarding.
     */
-  sealed case object BeforeBoarding extends PaymentMethod
+  case object BeforeBoarding extends PaymentMethod
 
   /**
     * Specifies the number of transfers permitted on this fare.
@@ -52,22 +52,22 @@ object FareAttribute {
   /**
     * No transfers permitted on this fare.
     */
-  sealed case object NoTransfer extends Transfer
+  case object NoTransfer extends Transfer
 
   /**
     * Passenger may transfer once.
     */
-  sealed case object Once extends Transfer
+  case object Once extends Transfer
 
   /**
     * Passenger may transfer twice.
     */
-  sealed case object Twice extends Transfer
+  case object Twice extends Transfer
 
   /**
     * Unlimited transfers are permitted.
     */
-  sealed case object Unlimited extends Transfer
+  case object Unlimited extends Transfer
 
 }
 

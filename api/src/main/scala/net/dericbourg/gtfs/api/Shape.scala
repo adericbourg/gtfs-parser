@@ -13,7 +13,7 @@ import net.dericbourg.gtfs.core.NonNegInt
   */
 case class Shape(shapeId: ShapeId, points: Seq[ShapePoint])
 
-sealed case class ShapeId(value: String) extends AnyVal
+case class ShapeId(value: String) extends AnyVal
 
 /**
   * Point taking port of a shape.
