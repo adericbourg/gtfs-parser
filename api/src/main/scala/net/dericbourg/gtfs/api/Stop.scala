@@ -65,16 +65,3 @@ case class StopId(value: String) extends AnyVal
   * @param value Underlying type-unsafe value.
   */
 case class ZoneId(value: String) extends AnyVal
-
-object Location {
-
-  /** Identifies whether a stop represents a stop or station. */
-  sealed trait LocationType
-
-  /** A location where passengers board or disembark from a transit vehicle. */
-  case object Stop extends LocationType
-
-  /** A physical structure or area that contains one or more stop. */
-  case object Station extends LocationType
-
-}
