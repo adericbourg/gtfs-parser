@@ -3,7 +3,7 @@ package net.dericbourg.gtfs.api
 import java.time.Duration
 import java.util.Currency
 
-import net.dericbourg.gtfs.api.FareAttribute.{PaymentMethod, Transfer}
+import net.dericbourg.gtfs.api.FareAttribute.{PaymentMethod, TransferLimit}
 
 /**
   * A [[FareAttribute]] defines a fare class. A [[FareAttribute]] has a price, currency and whether it must be purchased
@@ -22,7 +22,7 @@ case class FareAttribute(fareId: FareId,
                          price: Double,
                          currency: Currency,
                          paymentMethod: PaymentMethod,
-                         transfers: Transfer,
+                         transfers: TransferLimit,
                          transferDuration: Option[Duration])
 
 case class FareId(value: String) extends AnyVal
@@ -47,27 +47,27 @@ object FareAttribute {
   /**
     * Specifies the number of transfers permitted on this fare.
     */
-  sealed trait Transfer
+  sealed trait TransferLimit
 
   /**
     * No transfers permitted on this fare.
     */
-  case object NoTransfer extends Transfer
+  case object NoTransfer extends TransferLimit
 
   /**
     * Passenger may transfer once.
     */
-  case object Once extends Transfer
+  case object Once extends TransferLimit
 
   /**
     * Passenger may transfer twice.
     */
-  case object Twice extends Transfer
+  case object Twice extends TransferLimit
 
   /**
     * Unlimited transfers are permitted.
     */
-  case object Unlimited extends Transfer
+  case object Unlimited extends TransferLimit
 
 }
 
