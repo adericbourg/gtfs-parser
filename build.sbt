@@ -3,12 +3,14 @@ name := "gtfs-parser"
 lazy val root = project.in(file("."))
   .settings(name := "gtfs-parser")
   .settings(Common.Settings)
+  .settings(Common.PublishMaven)
   .aggregate(core, api)
   .dependsOn(core, api)
 
 lazy val core = (project in file("core"))
   .settings(name := "gtfs-core")
   .settings(Common.Settings)
+  .settings(Common.PublishMaven)
   .settings(Tests.Dependencies)
 
 
