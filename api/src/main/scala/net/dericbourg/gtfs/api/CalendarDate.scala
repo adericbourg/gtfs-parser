@@ -12,6 +12,7 @@ import net.dericbourg.gtfs.api.CalendarDate.ExceptionType
   * For example, you may have special services that are only operated on a public holiday, and they would be defined as
   * unavailable (in [[Calendar]]) and as available on the holiday (in [[CalendarDate]]).
   *
+  * @see [[https://developers.google.com/transit/gtfs/reference/calendar_dates-file GTFS format API doc]]
   * @param serviceId     Uniquely identifies a set of dates when a service exception is available for one or more
   *                      routes.
   * @param date          Date when service availability is different than the norm.
