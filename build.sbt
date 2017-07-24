@@ -1,7 +1,7 @@
 name := "gtfs-parser"
 
 lazy val root = project.in(file("."))
-  .settings(name := "gtfs-parser")
+  .settings(name := "gtfs-all")
   .settings(Common.Settings)
   .settings(Common.PublishMaven)
   .aggregate(core, api)
